@@ -16,7 +16,7 @@ driver = webdriver.Chrome(service=service)
 sportst_utils = SportStatUtils(driver=driver)
 wait = WebDriverWait(driver, 10)
 driver.set_window_size(1920,1080)
-#url
+#urlk
 url = "https://www.sportsstation.id/men-footwear.html"
 
 driver.get(url)
