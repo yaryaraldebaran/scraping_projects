@@ -105,4 +105,4 @@ for page in range(1,2):
 time.sleep(2)
 driver.quit()
 df = pd.DataFrame.from_dict(list_prod)
-df.to_csv('scraping_projects/scraping_sociolla')
+df.to_csv('scraping_projects/scraping_sociolla/output_file/output_soc.csv')
