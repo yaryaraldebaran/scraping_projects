@@ -30,7 +30,7 @@ xpath_mention_block = "//div[@class='review-mention-block']"
 xpath_restaurant_name ="//h1[@class='HjBfq']"
 xpath_restaurant_rating = "//span[@class='ZDEqb']"
 xpath_restaurant_review_count = "//a[@class='IcelI']"
-xpath_restaurant_details = "//div[@class='BMlpu']/div"
+xpath_restaurant_details = "//div[@class='BMlpu']"
 xpath_restaurant_gmaps_address = "(//div[@class='kDZhm IdiaP']/*)[2]"
 xpath_restaurant_website = "(//a[@class='YnKZo Ci Wc _S C FPPgD'])[2]"
 xpath_restaurant_phone = "//div[@class='IdiaP']/*/*/span[@class='yEWoV']"
@@ -60,7 +60,7 @@ for x,elmn in enumerate(element_result_title):#enumerate(element_result_title):
     element_restaurant_name = driver.find_element(By.XPATH,xpath_restaurant_name).text
     element_restaurant_rating = driver.find_element(By.XPATH,xpath_restaurant_rating).text
     element_restaurant_review_count = driver.find_element(By.XPATH,xpath_restaurant_review_count).text
-    element_restaurant_details = driver.find_elements(By.XPATH,xpath_restaurant_details)
+    element_restaurant_details = driver.find_element(By.XPATH,xpath_restaurant_details).get_attribute('textContent')
     element_restaurant_gmaps_address = driver.find_element(By.XPATH,xpath_restaurant_gmaps_address).text
     if (utils_trip.verify_element_by_xpath(xpath_restaurant_website)):
         element_restaurant_website = driver.find_element(By.XPATH,xpath_restaurant_website).get_attribute('href')
@@ -69,34 +69,16 @@ for x,elmn in enumerate(element_result_title):#enumerate(element_result_title):
     restaurant_data = {
         "element_restaurant_name":element_restaurant_name,
         "element_restaurant_rating":element_restaurant_rating,
+        "element_restaurant_details":element_restaurant_details,
         "element_restaurant_review_count":element_restaurant_review_count,
         "element_restaurant_gmaps_address":element_restaurant_gmaps_address,
         "element_restaurant_website":element_restaurant_website,
         "element_restaurant_phone":element_restaurant_phone
     }
     list_restaurant.append(restaurant_data)
-
-    # print(element_restaurant_details.get_attribute("innerHTML"))
-    # print(element_restaurant_name)
-    # print(element_restaurant_rating)
-    # print(element_restaurant_review_count)
-    # print(element_restaurant_gmaps_address)
-    # print(element_restaurant_website)
-    # print(element_restaurant_phone)
-
     print("================")
     driver.close()
     driver.switch_to.window(driver.window_handles[0])
-    # print("======================================")
-    # element_result_rating_count = driver.find_element(By.XPATH,xpath_result_rating_count)
-    # element_result_address = driver.find_element(By.XPATH,xpath_result_address)
-    # element_mention_block = driver.find_element(By.XPATH,xpath_mention_block)
-    # print(place.text)
-    # print(element_result_rating_count.text)
-    # print(element_result_address.text)
-    # print(element_mention_block.text)
-    # print("======================================")
-
 
 
 df = pd.DataFrame.from_dict(list_restaurant)
