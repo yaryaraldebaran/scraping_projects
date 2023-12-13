@@ -8,5 +8,6 @@ A repository for my scraping projects. Until now, these are scraping projects I'
    Scraping each job informations. 
 5. TripAdvisor
    Scraping each restaurant in Tangerang City Indonesia. Searching by location and click each restaurant link from search results. Then collect the information per restaurant page and save them into csv.
-   ![tripadvisor_portfolio](https://github.com/yaryaraldebaran/scraping_projects/assets/44632064/b8700e09-6ac7-4582-bce8-ea890c30b27a)
+   ![tripadvisor_scraping](https://github.com/yaryaraldebaran/scraping_projects/assets/44632064/bdbcc962-dc84-4593-a37f-f25c585f12f7)
+
 
